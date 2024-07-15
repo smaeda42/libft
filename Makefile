@@ -6,7 +6,7 @@
 #    By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/08 16:43:01 by smaeda            #+#    #+#              #
-#    Updated: 2024/07/09 08:21:21 by smaeda           ###   ########.fr        #
+#    Updated: 2024/07/11 21:30:19 by smaeda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS			= -Wall -Wextra -Werror -g
 
 NAME			= libft.a
 

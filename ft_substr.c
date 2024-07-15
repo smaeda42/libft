@@ -6,7 +6,7 @@
 /*   By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 22:10:46 by smaeda            #+#    #+#             */
-/*   Updated: 2024/07/06 17:22:48 by smaeda           ###   ########.fr       */
+/*   Updated: 2024/07/11 20:14:23 by smaeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s_len = ft_strlen(s);
 	if (start >= s_len || len == 0)
 	{
-		newstr = (char *)malloc(sizeof(char));
+		newstr = ft_strdup(0);
 		if (!newstr)
 			return (NULL);
-		newstr[0] = 0;
 		return (newstr);
 	}
 	if (len > s_len - start)
