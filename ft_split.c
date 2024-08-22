@@ -6,7 +6,7 @@
 /*   By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 16:21:54 by smaeda            #+#    #+#             */
-/*   Updated: 2024/08/22 21:26:00 by smaeda           ###   ########.fr       */
+/*   Updated: 2024/08/22 21:30:09 by smaeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	**ft_split(char const *s, char c)
 	list[j] = 0;
 	return (list);
 }
-
+/*
 int	main()
 {
 	char	str1[] = "\0aa\0bbb";
@@ -82,3 +82,4 @@ int	main()
 	char	**lst;
 	lst = ft_split(str1, c1);
 }
+*/
