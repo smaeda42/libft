@@ -6,7 +6,7 @@
 /*   By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 22:10:46 by smaeda            #+#    #+#             */
-/*   Updated: 2024/07/11 20:14:23 by smaeda           ###   ########.fr       */
+/*   Updated: 2024/08/20 21:04:15 by smaeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	s_len;
 
 	s_len = ft_strlen(s);
+	if (!s)
+		return (NULL);
 	if (start >= s_len || len == 0)
 	{
-		newstr = ft_strdup(0);
+		newstr = ft_strdup("");
 		if (!newstr)
 			return (NULL);
 		return (newstr);

@@ -6,7 +6,7 @@
 /*   By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 16:21:54 by smaeda            #+#    #+#             */
-/*   Updated: 2024/08/22 21:30:09 by smaeda           ###   ########.fr       */
+/*   Updated: 2024/08/29 20:46:46 by smaeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,20 @@ size_t	ft_word_count(char const *str, char c)
 	return (count);
 }
 
+static void	*ft_free(char **strs, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(strs[i]);
+		i++;
+	}
+	free(strs);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**list;
@@ -37,7 +51,7 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 
-	if (!s || !c)
+	if (!s)
 		return (NULL);
 	word_count = ft_word_count(s, c);
 //	list = (char **)malloc(sizeof(char *) * (word_count + 1));
@@ -58,20 +72,11 @@ char	**ft_split(char const *s, char c)
 				word_len = ft_strchr(&s[i], c) - &s[i];
 			list[j] = ft_substr(&s[i], 0, word_len);
 			if (!list[j])
-			{
-				while(j >= 0)
-				{
-					free(list[j]);
-					j--;
-				}
-				free(list);
-				return (NULL);
-			}
+				return (ft_free(list, word_count));
 			j++;
 			i += word_len;
 		}
 	}
-	list[j] = 0;
 	return (list);
 }
 /*

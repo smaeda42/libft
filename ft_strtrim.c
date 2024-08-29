@@ -24,14 +24,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = ft_strlen(s1) - 1;
 	while (ft_strchr(set, s1[i]) && i <= j)
 		i++;
-	while (s1[j] && ft_strchr(set,s1[j]) && (j >= i))
+	while (s1[j] && ft_strchr(set, s1[j]) && (j >= i))
 		j--;
-	newstr = ft_substr(s1, i, j - i + 1); 
+	newstr = ft_substr(s1, i, j - i + 1);
 	return (newstr);
 }
 /*
-int	main()
+int	main(void)
 {
-	char *str = ft_strtrim("", "");
+	char	*str;
+
+	str = ft_strtrim("", "");
 }
 */
