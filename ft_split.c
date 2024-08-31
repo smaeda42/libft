@@ -6,11 +6,11 @@
 /*   By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 16:21:54 by smaeda            #+#    #+#             */
-/*   Updated: 2024/08/29 20:46:46 by smaeda           ###   ########.fr       */
+/*   Updated: 2024/08/31 17:03:54 by smaeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 size_t	ft_word_count(char const *str, char c)
 {
@@ -43,18 +43,25 @@ static void	*ft_free(char **strs, int count)
 	return (NULL);
 }
 
+int	word_len(const char *s, char c)
+{
+	int	word_len;
+
+	if (!ft_strchr(s, c))
+		word_len = ft_strlen(s);
+	else
+		word_len = ft_strchr(s, c) - s;
+	return (word_len);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**list;
-	size_t	word_len;
-	size_t	word_count;
 	int		i;
 	int		j;
 
 	if (!s)
 		return (NULL);
-	word_count = ft_word_count(s, c);
-//	list = (char **)malloc(sizeof(char *) * (word_count + 1));
 	list = ft_calloc((ft_word_count(s, c) + 1), sizeof(char *));
 	if (!list)
 		return (NULL);
@@ -64,27 +71,26 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[i] == c && s[i])
 			i++;
-		if(s[i])
+		if (s[i])
 		{
-			if (!ft_strchr(&s[i], c))
-				word_len = ft_strlen(&s[i]);
-			else 
-				word_len = ft_strchr(&s[i], c) - &s[i];
-			list[j] = ft_substr(&s[i], 0, word_len);
+			list[j] = ft_substr(&s[i], 0, word_len(&s[i], c));
 			if (!list[j])
-				return (ft_free(list, word_count));
+				return (ft_free(list, ft_word_count(s, c)));
 			j++;
-			i += word_len;
+			i += word_len(&s[i], c);
 		}
 	}
 	return (list);
 }
+
 /*
-int	main()
+int	main(void)
 {
 	char	str1[] = "\0aa\0bbb";
-	char	c1 = '\0';
+	char	c1;
 	char	**lst;
+
+	c1 = '\0';
 	lst = ft_split(str1, c1);
 }
 */
