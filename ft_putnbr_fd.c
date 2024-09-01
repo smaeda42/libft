@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 18:40:35 by smaeda            #+#    #+#             */
-/*   Updated: 2024/09/01 21:13:12 by smaeda           ###   ########.fr       */
+/*   Created: 2024/08/31 21:16:41 by smaeda            #+#    #+#             */
+/*   Updated: 2024/09/01 19:23:49 by smaeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	char	number;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+		ft_putnbr_fd(n, fd);
+	}
+	else
+	{
+		if (n > 9)
+		{
+			ft_putnbr_fd(n / 10, fd);
+			ft_putnbr_fd(n % 10, fd);
+		}
+		else
+		{
+			number = n + 48;
+			write(fd, &number, 1);
+		}
+	}
 }
-/*
-int	main(void)
-{
-	size_t	result;
-	result = ft_strlen("");
-	return (result);
-}
-*/

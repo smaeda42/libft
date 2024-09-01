@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/06 13:23:17 by smaeda            #+#    #+#             */
-/*   Updated: 2024/09/01 21:13:43 by smaeda           ###   ########.fr       */
+/*   Created: 2024/08/31 17:27:25 by smaeda            #+#    #+#             */
+/*   Updated: 2024/08/31 19:12:53 by smaeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	int		j;
-	char	*newstr;
+	unsigned int	i;
+	char			*result;
 
-	if (!s1 || !set)
+	result = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!result)
 		return (NULL);
-	if (ft_strlen(s1) == 0)
-		return (ft_strdup(""));
 	i = 0;
-	j = ft_strlen(s1) -1;
-	while (ft_strchr(set, s1[i]) && (i < j))
+	while (i < ft_strlen(s))
+	{
+		result[i] = (*f)(i, s[i]);
 		i++;
-	while (s1[j] && ft_strchr(set, s1[j]) && (j >= i) && (j > 0))
-		j--;
-	newstr = ft_substr(s1, i, j - i + 1);
-	return (newstr);
+	}
+	result[i] = 0;
+	return (result);
 }
-
-/*
-int	main(void)
-{
-	char	*str;
-	str = ft_strtrim("", "");
-}
-*/

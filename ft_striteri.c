@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/06 13:23:17 by smaeda            #+#    #+#             */
-/*   Updated: 2024/09/01 21:13:43 by smaeda           ###   ########.fr       */
+/*   Created: 2024/08/31 19:13:21 by smaeda            #+#    #+#             */
+/*   Updated: 2024/08/31 19:36:52 by smaeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int		i;
-	int		j;
-	char	*newstr;
+	unsigned int	i;
 
-	if (!s1 || !set)
-		return (NULL);
-	if (ft_strlen(s1) == 0)
-		return (ft_strdup(""));
 	i = 0;
-	j = ft_strlen(s1) -1;
-	while (ft_strchr(set, s1[i]) && (i < j))
+	while (s[i])
+	{
+		(*f)(i, &s[i]);
 		i++;
-	while (s1[j] && ft_strchr(set, s1[j]) && (j >= i) && (j > 0))
-		j--;
-	newstr = ft_substr(s1, i, j - i + 1);
-	return (newstr);
+	}
 }
-
-/*
-int	main(void)
-{
-	char	*str;
-	str = ft_strtrim("", "");
-}
-*/
