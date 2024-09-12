@@ -6,7 +6,7 @@
 #    By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/08 16:43:01 by smaeda            #+#    #+#              #
-#    Updated: 2024/09/01 19:15:12 by smaeda           ###   ########.fr        #
+#    Updated: 2024/09/05 17:58:19 by smaeda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,11 @@ SRCS			=	ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 					ft_putendl_fd.c ft_putnbr_fd.c
 OBJS			= $(SRCS:.c=.o)
 
-BONUS			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+#BONUS			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 					ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 					ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-BONUS_OBJS		= $(BONUS:.c=.o)
+#BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= cc
 RM				= rm -f

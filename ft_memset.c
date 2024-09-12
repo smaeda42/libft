@@ -6,23 +6,20 @@
 /*   By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:40:29 by smaeda            #+#    #+#             */
-/*   Updated: 2024/06/15 16:44:30 by smaeda           ###   ########.fr       */
+/*   Updated: 2024/09/07 21:34:04 by smaeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
+#include <string.h>
 
 void	*ft_memset(void *buf, int ch, size_t n)
 {
-	int				i;
 	unsigned char	*buf_1;
 
-	i = 0;
 	buf_1 = (unsigned char *)buf;
-	while (n - i > 0)
-	{
-		buf_1[i] = ch;
-		i++;
-	}
-	return (buf_1);
+	while (n-- > 0)
+		*(buf_1++) = (unsigned char) ch;
+	return (buf);
 }

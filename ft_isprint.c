@@ -6,14 +6,11 @@
 /*   By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 16:16:39 by smaeda            #+#    #+#             */
-/*   Updated: 2024/06/13 20:30:36 by smaeda           ###   ########.fr       */
+/*   Updated: 2024/09/05 18:37:24 by smaeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	else
-		return (0);
+	return (c >= 32 && c <= 126);
 }
