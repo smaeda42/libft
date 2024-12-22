@@ -6,7 +6,7 @@
 /*   By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 21:06:11 by smaeda            #+#    #+#             */
-/*   Updated: 2024/12/22 18:57:20 by smaeda           ###   ########.fr       */
+/*   Updated: 2024/12/22 19:02:30 by smaeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *str)
 {
-	int	flag;
+	int		flag;
 	long long	result;
 
 	result = 0;
@@ -23,10 +23,10 @@ int	ft_atoi(const char *str)
 	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
 	flag = (*str == '-') * -2 + 1;
-	str += (*str == '-' || *str == '+'); 
+	str += (*str == '-' || *str == '+');
 	while (ft_isdigit(*str))
 	{
-		result = result * 10 + (*str -'0');
+		result = result * 10 + (*str - '0');
 		str++;
 		if (ft_isdigit(*str) && flag == 1 && ((LONG_MAX - (*str - '0'))
 				/ 10 < result || result * 10 >= LONG_MAX))
