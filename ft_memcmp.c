@@ -29,18 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-		printf("zisaku  : %d\n", ft_memcmp("aiueo", "aiue1", 5));
-		printf("library : %d\n", memcmp("aiueo", "aiue1", 5));
-		printf("zisaku  : %d\n", ft_memcmp("aiueo", "aiueo", 5));
-		printf("library : %d\n", memcmp("aiueo", "aiueo", 5));
-		printf("zisaku  : %d\n", ft_memcmp("aiueo", "1iueo", 5));
-		printf("library : %d\n", memcmp("aiueo", "1iueo", 5));
-		printf("zisaku  : %d\n", ft_memcmp("aiueo", "1iueo", 0));
-		printf("library : %d\n", memcmp("aiueo", "1iueo", 0));
-		printf("zisaku  : %d\n", ft_memcmp("", "", 0));
-		printf("library : %d\n", memcmp("", "", 0));
-}
-*/
