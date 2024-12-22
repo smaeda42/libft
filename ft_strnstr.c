@@ -31,15 +31,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	char	str1[] = "abbcdefg";
-	char	str2[] = "bbc";
-
-//	printf("zisaku  : %s\n", ft_strnstr(str1, str2, 5));
-	printf("library : %s\n", strnstr(str1, str2, 0));
-//	printf("zisaku  : %s\n", ft_strnstr(str1, str2, 6));
-	printf("library : %s\n", strnstr(str1, str2, 20));
-}
-*/

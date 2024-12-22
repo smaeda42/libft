@@ -28,16 +28,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-/*
-int	main()
-{
-    const char *s1 = "hello";
-    const char *s2 = "hello";
-    size_t n = 5;
-
-    int ft_result = ft_strncmp(s1, s2, n);
-	int result = strncmp(s1, s2, n);
-    printf("ft_strncmp ;%d\n", ft_result);
-    printf("strncmp ;%d\n", result);
-}
-*/

@@ -22,20 +22,3 @@ int	ft_toupper(int c)
 	else
 		return (c);
 }
-
-/*
-#include <ctype.h>
-int	main()
-{
-	int c;
-	int result;
-
-	c = 120;
-	result = toupper(c);
-	printf("The result is:%c",result);
-
-	c = 'A';
-	result = toupper(c);
-	printf("The result is:%c",result);
-}
-*/

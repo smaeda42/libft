@@ -31,11 +31,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	newstr = ft_substr(s1, i, j - i + 1);
 	return (newstr);
 }
-
-/*
-int	main(void)
-{
-	char	*str;
-	str = ft_strtrim("", "");
-}
-*/

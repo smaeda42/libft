@@ -31,16 +31,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (dst_l + src_l);
 	return (dst_l + src_l);
 }
-/*
- int main()
- {
- //    char src1[] = "qwerty";
-  //   char dst1[] = "abcdefghijk";
-
-		//printf("Before strlcat: src1 = %s\n", src1);
-		size_t result = strlcat("abcdifg", "hi", 20);
-		printf("result = %zu\n\n", result);
-// 		printf("result = %s\n\n", dst1);
-		return (0);
- }
- */

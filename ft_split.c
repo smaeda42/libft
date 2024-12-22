@@ -6,7 +6,7 @@
 /*   By: smaeda <smaeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 16:21:54 by smaeda            #+#    #+#             */
-/*   Updated: 2024/08/31 17:03:54 by smaeda           ###   ########.fr       */
+/*   Updated: 2024/12/22 19:46:17 by smaeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ size_t	ft_word_count(char const *str, char c)
 	return (count);
 }
 
-static void	*ft_free(char **strs, int count)
+static void	*ft_free(char **strs)
 {
 	int	i;
 
 	i = 0;
-	while (i < count)
+	while (strs[i])
 	{
 		free(strs[i]);
 		i++;
@@ -75,22 +75,10 @@ char	**ft_split(char const *s, char c)
 		{
 			list[j] = ft_substr(&s[i], 0, word_len(&s[i], c));
 			if (!list[j])
-				return (ft_free(list, ft_word_count(s, c)));
+				return (ft_free(list));
 			j++;
 			i += word_len(&s[i], c);
 		}
 	}
 	return (list);
 }
-
-/*
-int	main(void)
-{
-	char	str1[] = "\0aa\0bbb";
-	char	c1;
-	char	**lst;
-
-	c1 = '\0';
-	lst = ft_split(str1, c1);
-}
-*/

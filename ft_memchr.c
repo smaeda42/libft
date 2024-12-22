@@ -30,12 +30,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	char str1[] ="nesugosita!!!";
-	char str2[] ="nesugosita!!!";
-	printf("ft_memchr  : %s\n", ft_memchr(str51, 103, 15));
-	printf("memchr : %s\n", memchr(str52, 103, 15));
-}
-*/

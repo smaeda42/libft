@@ -29,16 +29,3 @@ char	*ft_strchr(const char *s, int c)
 		return (s1);
 	return (NULL);
 }
-
-/*
-int	main(void)
-{
-	const char	*str1 = "Hello, world!";
-	char		*result1;
-	char		*expected1;
-
-	result1 = ft_strchr(str1, 'o');
-	expected1 = strchr(str1, 'o');
-	printf("Test 1 - Expected: %s, Got: %s\n", expected1, result1);
-}
-*/
