@@ -31,15 +31,19 @@ CFLAGS			= -Wall -Wextra -Werror -g
 
 NAME			= libft.a
 
+.PHONY: all
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
+.PHONY: clean
 clean:
 				$(RM) $(OBJS) $(BONUS_OBJS)
 
+.PHONY: fclean
 fclean:			clean
 				$(RM) $(NAME)
-
+				
+.PHONY: re
 re:				fclean $(NAME)
