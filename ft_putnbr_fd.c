@@ -33,7 +33,7 @@ void	ft_putnbr_fd(int n, int fd)
 		}
 		else
 		{
-			number = n + 48;
+			number = n + '0';
 			write(fd, &number, 1);
 		}
 	}
